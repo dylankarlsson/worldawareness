@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Awareness</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      background: #f4efe6;
+      color: #312f2d;
+    }
+
+    .sacred-shell {
+      min-height: 100%;
+      width: 100%;
+      overflow: auto;
+      position: relative;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(183, 144, 97, 0.16), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(109, 133, 103, 0.16), transparent 24%),
+        linear-gradient(180deg, #f7f2ea 0%, #f0e7da 55%, #ebe1d2 100%);
+    }
+
+    .mist {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,0.35), transparent 20%),
+        radial-gradient(circle at 65% 60%, rgba(255,255,255,0.18), transparent 22%);
+      opacity: 0.8;
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image:
+        linear-gradient(rgba(49,47,45,0.9) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49,47,45,0.9) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.12s; }
+    .delay-2 { animation-delay: 0.24s; }
+    .delay-3 { animation-delay: 0.36s; }
+    .delay-4 { animation-delay: 0.48s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .halo-line {
+      background: linear-gradient(90deg, transparent, rgba(183, 144, 97, 0.9), transparent);
+    }
+
+    .soft-card {
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 40px rgba(67, 58, 49, 0.08);
+    }
+
+    .font-display {
+      font-family: "Cormorant Garamond", serif;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="sacred-shell h-full w-full">
+   <div class="mist"></div>
+   <div class="grain"></div>
+   <header class="relative z-10 px-6 pt-8 pb-4 md:px-10">
+    <div class="mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border border-white/50 bg-white/40 px-5 py-3 soft-card">
+     <div class="flex items-center gap-3">
+      <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-white/60"><i data-lucide="sparkles" class="h-5 w-5"></i>
+      </div>
+      <div>
+       <p id="site-title" class="font-display text-2xl font-semibold tracking-wide text-[color:inherit]">Spirit and World Awareness</p>
+      </div>
+     </div>
+     <nav class="hidden gap-6 text-sm md:flex"><a href="#latest" class="rounded-full px-3 py-2 transition hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#b79061]">Latest</a> <a href="#reflection" class="rounded-full px-3 py-2 transition hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#b79061]">Reflection</a> <a href="#about" class="rounded-full px-3 py-2 transition hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#b79061]">About</a>
+     </nav>
+    </div>
+   </header>
+   <main class="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 pb-10 pt-4 md:px-10">
+    <section class="grid items-center gap-8 md:grid-cols-[1.2fr_0.8fr]">
+     <div class="fade-up">
+      <p class="mb-3 inline-flex rounded-full border border-white/60 bg-white/50 px-4 py-2 text-xs uppercase tracking-[0.3em] soft-card">gentle thoughts • inner balance • mindful living</p>
+      <h1 id="hero-title" class="font-display text-5xl font-semibold leading-none md:text-7xl">A quiet place for reflection and spiritual clarity</h1>
+      <p id="hero-subtitle" class="mt-5 max-w-xl text-base leading-8 md:text-lg">Read slow, breathe deeply, and reconnect with the wisdom already living within you.</p>
+     </div>
+     <aside class="fade-up delay-1">
+      <div class="soft-card rounded-[2rem] border border-white/60 bg-white/45 p-6">
+       <div class="mb-6 flex items-center gap-3">
+        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#6d8567]/15"><i data-lucide="moon-star" class="h-6 w-6"></i>
+        </div>
+        <div>
+         <p class="font-display text-2xl font-semibold">Daily Intention</p>
+         <p class="text-sm opacity-75">Pause before rushing</p>
+        </div>
+       </div>
+       <p class="leading-8">Let today unfold with softness. Choose presence over pressure, and listen for what peace is trying to teach you.</p>
+      </div>
+     </aside>
+    </section>
+    <section id="latest" class="grid gap-6 md:grid-cols-[1.4fr_0.8fr]">
+     <article class="soft-card fade-up delay-2 rounded-[2rem] border border-white/60 bg-white/55 p-7 md:p-9">
+      <div class="mb-4 flex items-center gap-3 text-sm uppercase tracking-[0.25em] opacity-70"><span>Featured Reading</span>
+      </div>
+      <h2 id="article-title" class="font-display text-4xl font-semibold md:text-5xl">Listening for the Sacred in Everyday Silence</h2>
+      <div class="my-5 h-px w-full halo-line"></div>
+      <p id="article-excerpt" class="text-base leading-8 md:text-lg">Spiritual life is often imagined as something distant or dramatic, but many of the deepest awakenings arrive quietly. In morning light, in a cup of tea, in a long exhale after worry begins to loosen its grip — there, the soul remembers itself.</p><button type="button" class="mt-7 inline-flex items-center gap-2 rounded-full border border-[#b79061] bg-[#b79061] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#312f2d]"> <span>Continue Reading</span> <i data-lucide="arrow-right" class="h-4 w-4"></i> </button>
+     </article>
+     <div class="flex flex-col gap-6">
+      <section id="reflection" class="soft-card fade-up delay-3 rounded-[2rem] border border-white/60 bg-[#6d8567] p-6 text-white">
+       <p class="mb-3 text-xs uppercase tracking-[0.3em] text-white/75">Reflection</p>
+       <blockquote id="quote-text" class="font-display text-3xl leading-tight md:text-4xl">
+        “Stillness is not emptiness. It is the doorway through which truth arrives.”
+       </blockquote>
+      </section>
+      <section id="about" class="soft-card fade-up delay-4 rounded-[2rem] border border-white/60 bg-white/50 p-6">
+       <p class="mb-3 text-xs uppercase tracking-[0.3em] opacity-70">About This Space</p>
+       <p class="leading-8">This page is designed like a peaceful journal — soft, readable, and welcoming. It works beautifully as a personal blog landing page or a spiritual writing homepage.</p>
+      </section>
+     </div>
+    </section>
+   </main>
+   <footer class="relative z-10 px-6 pb-8 md:px-10">
+    <div class="mx-auto w-full max-w-6xl rounded-[2rem] border border-white/60 bg-white/40 px-6 py-5 text-center soft-card">
+     <p id="footer-text" class="text-sm tracking-[0.15em] uppercase opacity-75">May your heart feel lighter after every visit.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#f4efe6",
+      surface_color: "#f8f3ec",
+      text_color: "#312f2d",
+      primary_action_color: "#b79061",
+      secondary_action_color: "#6d8567",
+      font_family: "Cormorant Garamond",
+      font_size: 18,
+      site_title: "Soul Notes",
+      hero_title: "A quiet place for reflection and spiritual clarity",
+      hero_subtitle: "Read slow, breathe deeply, and reconnect with the wisdom already living within you.",
+      article_title: "Listening for the Sacred in Everyday Silence",
+      article_excerpt: "Spiritual life is often imagined as something distant or dramatic, but many of the deepest awakenings arrive quietly. In morning light, in a cup of tea, in a long exhale after worry begins to loosen its grip — there, the soul remembers itself.",
+      quote_text: "“Stillness is not emptiness. It is the doorway through which truth arrives.”",
+      footer_text: "May your heart feel lighter after every visit."
+    };
+
+    const els = {
+      shell: document.querySelector('.sacred-shell'),
+      body: document.body,
+      navLinks: Array.from(document.querySelectorAll('nav a')),
+      siteTitle: document.getElementById('site-title'),
+      heroTitle: document.getElementById('hero-title'),
+      heroSubtitle: document.getElementById('hero-subtitle'),
+      articleTitle: document.getElementById('article-title'),
+      articleExcerpt: document.getElementById('article-excerpt'),
+      quoteText: document.getElementById('quote-text'),
+      footerText: document.getElementById('footer-text'),
+      featuredCard: document.querySelector('article'),
+      sideCards: Array.from(document.querySelectorAll('.soft-card')),
+      primaryButton: document.querySelector('button'),
+      reflectionCard: document.getElementById('reflection')
+    };
+
+    function applyConfig(config) {
+      const merged = { ...defaultConfig, ...config };
+      const base = merged.font_size || defaultConfig.font_size;
+
+      els.body.style.backgroundColor = merged.background_color;
+      els.body.style.color = merged.text_color;
+      els.shell.style.background = `radial-gradient(circle at 20% 20%, ${hexToRgba(merged.primary_action_color, 0.16)}, transparent 28%), radial-gradient(circle at 80% 10%, ${hexToRgba(merged.secondary_action_color, 0.16)}, transparent 24%), linear-gradient(180deg, ${lightenHex(merged.background_color, 6)} 0%, ${merged.background_color} 55%, ${darkenHex(merged.background_color, 4)} 100%)`;
+
+      els.siteTitle.textContent = merged.site_title;
+      els.heroTitle.textContent = merged.hero_title;
+      els.heroSubtitle.textContent = merged.hero_subtitle;
+      els.articleTitle.textContent = merged.article_title;
+      els.articleExcerpt.textContent = merged.article_excerpt;
+      els.quoteText.textContent = merged.quote_text;
+      els.footerText.textContent = merged.footer_text;
+
+      const displayFont = `${merged.font_family}, "Cormorant Garamond", serif`;
+      const bodyFont = `"Manrope", sans-serif`;
+
+      [els.siteTitle, els.heroTitle, els.articleTitle, els.quoteText].forEach(el => {
+        el.style.fontFamily = displayFont;
+        el.style.color = merged.text_color;
+      });
+
+      [els.heroSubtitle, els.articleExcerpt, els.footerText].forEach(el => {
+        el.style.fontFamily = `${merged.font_family}, ${bodyFont}`;
+        el.style.color = merged.text_color;
+      });
+
+      els.siteTitle.style.fontSize = `${base * 1.45}px`;
+      els.heroTitle.style.fontSize = `${base * 3.2}px`;
+      els.heroSubtitle.style.fontSize = `${base}px`;
+      els.articleTitle.style.fontSize = `${base * 2.35}px`;
+      els.articleExcerpt.style.fontSize = `${base}px`;
+      els.quoteText.style.fontSize = `${base * 1.9}px`;
+      els.footerText.style.fontSize = `${base * 0.78}px`;
+
+      els.sideCards.forEach(card => {
+        if (card !== els.reflectionCard) {
+          card.style.backgroundColor = hexToRgba(merged.surface_color, 0.72);
+          card.style.color = merged.text_color;
+        }
+      });
+
+      els.featuredCard.style.backgroundColor = hexToRgba(merged.surface_color, 0.8);
+      els.featuredCard.style.color = merged.text_color;
+      els.reflectionCard.style.backgroundColor = merged.secondary_action_color;
+      els.reflectionCard.style.color = "#ffffff";
+
+      els.primaryButton.style.backgroundColor = merged.primary_action_color;
+      els.primaryButton.style.borderColor = merged.primary_action_color;
+      els.primaryButton.style.color = "#ffffff";
+
+      els.navLinks.forEach(link => {
+        link.style.color = merged.text_color;
+      });
+    }
+
+    function hexToRgba(hex, alpha) {
+      const clean = hex.replace('#', '');
+      const bigint = parseInt(clean.length === 3 ? clean.split('').map(c => c + c).join('') : clean, 16);
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    function lightenHex(hex, percent) {
+      return adjustHex(hex, Math.abs(percent));
+    }
+
+    function darkenHex(hex, percent) {
+      return adjustHex(hex, -Math.abs(percent));
+    }
+
+    function adjustHex(hex, percent) {
+      const clean = hex.replace('#', '');
+      const full = clean.length === 3 ? clean.split('').map(c => c + c).join('') : clean;
+      let r = parseInt(full.substring(0, 2), 16);
+      let g = parseInt(full.substring(2, 4), 16);
+      let b = parseInt(full.substring(4, 6), 16);
+
+      r = Math.min(255, Math.max(0, Math.round(r + (255 * percent / 100))));
+      g = Math.min(255, Math.max(0, Math.round(g + (255 * percent / 100))));
+      b = Math.min(255, Math.max(0, Math.round(b + (255 * percent / 100))));
+
+      return `#${[r, g, b].map(v => v.toString(16).padStart(2, '0')).join('')}`;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          applyConfig(config);
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => window.elementSdk.setConfig({ background_color: value })
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => window.elementSdk.setConfig({ surface_color: value })
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => window.elementSdk.setConfig({ text_color: value })
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => window.elementSdk.setConfig({ primary_action_color: value })
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => window.elementSdk.setConfig({ secondary_action_color: value })
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => window.elementSdk.setConfig({ font_family: value })
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => window.elementSdk.setConfig({ font_size: value })
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["site_title", config.site_title || defaultConfig.site_title],
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+          ["article_title", config.article_title || defaultConfig.article_title],
+          ["article_excerpt", config.article_excerpt || defaultConfig.article_excerpt],
+          ["quote_text", config.quote_text || defaultConfig.quote_text],
+          ["footer_text", config.footer_text || defaultConfig.footer_text]
+        ])
+      });
+    } else {
+      applyConfig(defaultConfig);
+    }
+
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e4081fa55aa08ce',t:'MTc3NDgwNDQzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
